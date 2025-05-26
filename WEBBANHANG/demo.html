@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Giao diện - TechStore</title>
+    
+    <!-- Bootstrap 5.3.6 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .product-card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .cart-badge {
+            position: relative;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0 20px 0;
+            margin-top: 50px;
+        }
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shop"></i> TechStore
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-house"></i> Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-grid"></i> Sản phẩm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-plus-circle"></i> Thêm sản phẩm
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link cart-badge" href="#">
+                            <i class="bi bi-cart3"></i> Giỏ hàng
+                            <span class="cart-count">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container mt-4">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold mb-4">Chào mừng đến với TechStore</h1>
+                            <p class="lead mb-4">Khám phá những sản phẩm công nghệ mới nhất với giá cả hợp lý. Chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm tuyệt vời nhất.</p>
+                            <a href="#products" class="btn btn-light btn-lg">
+                                <i class="bi bi-arrow-down"></i> Xem sản phẩm
+                            </a>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <i class="bi bi-laptop display-1 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="py-5">
+                <div class="container">
+                    <!-- Header Section -->
+                    <div class="row mb-5">
+                        <div class="col-lg-8">
+                            <h2 class="display-5 fw-bold mb-3">Sản phẩm nổi bật</h2>
+                            <p class="lead text-muted">Khám phá bộ sưu tập sản phẩm công nghệ đa dạng của chúng tôi</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="#" class="btn btn-primary btn-lg">
+                                <i class="bi bi-plus-circle"></i> Thêm sản phẩm mới
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="row g-4">
+                        <!-- Product 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card product-card h-100 shadow-sm">
+                                <div class="position-relative">
+                                    <div class="product-image bg-light d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-phone text-muted" style="font-size: 3rem;"></i>
+                                    </div>
+                                    <span class="position-absolute top-0 start-0 badge bg-primary m-2">
+                                        Điện thoại
+                                    </span>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title mb-2">iPhone 15 Pro</h5>
+                                    <p class="card-text text-muted flex-grow-1">
+                                        Điện thoại iPhone 15 Pro mới nhất với chip A17 Pro, camera 48MP và thiết kế titanium cao cấp...
+                                    </p>
+                                    <div class="price-tag mb-3">25.000.000 VNĐ</div>
+                                    <div class="d-grid gap-2">
+                                        <a href="#" class="btn btn-primary">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+                                        </a>
+                                        <div class="btn-group" role="group">
+                                            <a href="#" class="btn btn-outline-info btn-sm">
+                                                <i class="bi bi-eye"></i> Xem
+                                            </a>
+                                            <a href="#" class="btn btn-outline-warning btn-sm">
+                                                <i class="bi bi-pencil"></i> Sửa
+                                            </a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card product-card h-100 shadow-sm">
+                                <div class="position-relative">
+                                    <div class="product-image bg-light d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-laptop text-muted" style="font-size: 3rem;"></i>
+                                    </div>
+                                    <span class="position-absolute top-0 start-0 badge bg-primary m-2">
+                                        Laptop
+                                    </span>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title mb-2">MacBook Pro M3</h5>
+                                    <p class="card-text text-muted flex-grow-1">
+                                        Laptop MacBook Pro với chip M3 mạnh mẽ, màn hình Retina 14 inch và thời lượng pin lên đến 18 giờ...
+                                    </p>
+                                    <div class="price-tag mb-3">45.000.000 VNĐ</div>
+                                    <div class="d-grid gap-2">
+                                        <a href="#" class="btn btn-primary">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+                                        </a>
+                                        <div class="btn-group" role="group">
+                                            <a href="#" class="btn btn-outline-info btn-sm">
+                                                <i class="bi bi-eye"></i> Xem
+                                            </a>
+                                            <a href="#" class="btn btn-outline-warning btn-sm">
+                                                <i class="bi bi-pencil"></i> Sửa
+                                            </a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card product-card h-100 shadow-sm">
+                                <div class="position-relative">
+                                    <div class="product-image bg-light d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-tablet text-muted" style="font-size: 3rem;"></i>
+                                    </div>
+                                    <span class="position-absolute top-0 start-0 badge bg-primary m-2">
+                                        Tablet
+                                    </span>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title mb-2">iPad Pro</h5>
+                                    <p class="card-text text-muted flex-grow-1">
+                                        Máy tính bảng iPad Pro với chip M2, màn hình Liquid Retina XDR và hỗ trợ Apple Pencil thế hệ 2...
+                                    </p>
+                                    <div class="price-tag mb-3">25.000.000 VNĐ</div>
+                                    <div class="d-grid gap-2">
+                                        <a href="#" class="btn btn-primary">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+                                        </a>
+                                        <div class="btn-group" role="group">
+                                            <a href="#" class="btn btn-outline-info btn-sm">
+                                                <i class="bi bi-eye"></i> Xem
+                                            </a>
+                                            <a href="#" class="btn btn-outline-warning btn-sm">
+                                                <i class="bi bi-pencil"></i> Sửa
+                                            </a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-3">
+                        <i class="bi bi-shop"></i> TechStore
+                    </h5>
+                    <p class="mb-3">
+                        Cửa hàng điện tử hàng đầu với các sản phẩm công nghệ mới nhất. 
+                        Chúng tôi cam kết mang đến cho khách hàng những sản phẩm chất lượng cao với giá cả hợp lý.
+                    </p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-3">Sản phẩm</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Tất cả sản phẩm</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Thêm sản phẩm</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Giỏ hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-3">Danh mục</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Điện thoại</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Laptop</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Tablet</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Phụ kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-3">Liên hệ</h5>
+                    <div class="mb-2">
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        123 Đường ABC, Quận XYZ, TP.HCM
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        +84 123 456 789
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        info@techstore.com
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-clock-fill me-2"></i>
+                        Thứ 2 - Chủ nhật: 8:00 - 22:00
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 TechStore. Tất cả quyền được bảo lưu.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none me-3">Chính sách bảo mật</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.6 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
